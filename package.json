@@ -1,0 +1,11 @@
+{
+  "name": "eslint-config-skyscanner-with-prettier",
+  "version": "0.0.0",
+  "description": "Skyscanner's eslint config with prettier support ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Backpack Design System <backpack@skyscanner.net>",
+  "license": "Apache-2.0"
+}
