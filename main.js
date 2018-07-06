@@ -1,8 +1,16 @@
 #!/usr/bin/env node
+
+/* eslint-disable no-console */
 const path = require('path');
 const fs = require('fs');
-const child_process = require('child_process');
+const { execSync } = require('child_process');
 const colors = require('colors/safe');
+
+if (
+  process.env.DISABLE_SKYSCANNER_ESLINT_WITH_PRETTIER_INSTALL_SCRIPT === '1'
+) {
+  process.exit(0);
+}
 
 const ESLINTRC_FILES = [
   '.eslintrc',
@@ -23,7 +31,7 @@ const PRETTIERRC_FILES = [
 const NPM_SCRIPTS = `
   "lint:js": "eslint . --ext js,jsx",
   "lint:js:fix": "eslint . --ext js,jsx --fix",
-  "prettier": "prettier --config .prettierrc --write \\\"**/*.{js,jsx}\\\"",
+  "prettier": "prettier --config .prettierrc --write \\"**/*.{js,jsx}\\"",
 `;
 
 const cwd = process.env.INIT_CWD;
@@ -49,17 +57,19 @@ const createInstallCommand = dependencies =>
     .map(([name, range]) => `${name}@'${range}'`)
     .join(' ')}`;
 
-const fileExsists = path => fs.existsSync(path);
+const fileExsists = filePath => fs.existsSync(filePath);
 
-const hasEslintRcFile = cwd =>
-  ESLINTRC_FILES.some(file => fileExsists(path.join(cwd, file)));
+const hasEslintRcFile = workingDictionary =>
+  ESLINTRC_FILES.some(file => fileExsists(path.join(workingDictionary, file)));
 const hasEslintPackageConfig = packageJSON =>
-  packageJSON.hasOwnProperty('eslintConfig');
+  Object.prototype.hasOwnProperty.call(packageJSON, 'eslintConfig');
 
-const hasPrettierRcFile = cwd =>
-  PRETTIERRC_FILES.some(file => fileExsists(path.join(cwd, file)));
+const hasPrettierRcFile = workingDictionary =>
+  PRETTIERRC_FILES.some(file =>
+    fileExsists(path.join(workingDictionary, file)),
+  );
 const hasPrettierPackageConfig = packageJSON =>
-  packageJSON.hasOwnProperty('prettier');
+  Object.prototype.hasOwnProperty.call(packageJSON, 'prettier');
 
 try {
   const skyscannerWithPrettierConfig = readPackageJSON(
@@ -73,7 +83,7 @@ try {
       command,
     )}`,
   );
-  child_process.execSync(
+  execSync(
     createInstallCommand(
       Object.entries(skyscannerWithPrettierConfig.peerDependencies),
     ),
@@ -114,7 +124,7 @@ try {
       npmInstall,
     )}`,
   );
-  child_process.execSync(npmInstall, { cwd });
+  execSync(npmInstall, { cwd });
   console.log(colors.green('All peer dependencies installed successfully'));
 
   const hasExistingEslintConfig =
@@ -125,7 +135,7 @@ try {
       'Please add "extends": [\'skyscanner-with-prettier\'] to your eslint config and remove any extension of `skyscanner`',
     );
   } else {
-    child_process.execSync(
+    execSync(
       `cp ${path.join(__dirname, 'eslintrc.template')} ${path.join(
         cwd,
         '.eslintrc',
@@ -138,7 +148,7 @@ try {
     hasPrettierRcFile(cwd) || hasPrettierPackageConfig(projectPackageJSON);
 
   if (!hasExistingPrettierConfig) {
-    child_process.execSync(
+    execSync(
       `cp ${path.join(__dirname, 'prettierrc.template')} ${path.join(
         cwd,
         '.prettierrc',
@@ -147,7 +157,9 @@ try {
     console.log('We created `.prettierrc` for you.');
   }
   console.log(
-    `All done, we suggest you add the following npm scripts to your package.json:\n ${colors.blue(NPM_SCRIPTS)}`,
+    `All done, we suggest you add the following npm scripts to your package.json:\n ${colors.blue(
+      NPM_SCRIPTS,
+    )}`,
   );
 } catch (e) {
   console.error(colors.red('Something has gone wrong'));
