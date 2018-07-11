@@ -9,6 +9,7 @@
     "npm": ">= 5.4.2"
   },
   "scripts": {
+    "test": "(cd test && ./e2e-test.sh)",
     "postinstall": "./main.js",
     "lint": "npm run lint:js",
     "lint:js": "eslint . --ext js",
