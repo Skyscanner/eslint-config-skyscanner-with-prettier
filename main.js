@@ -60,19 +60,11 @@ if (!cwd) {
   process.exit(1);
 }
 
-const packageJSONPathForPackage = packageName =>
-  path.join(cwd, 'node_modules', packageName, 'package.json');
-
 const readPackageJSON = fullPath => {
   const file = fs.readFileSync(fullPath, { encoding: 'utf8' });
 
   return JSON.parse(file);
 };
-
-const createInstallCommand = dependencies =>
-  `npm install --save-dev ${dependencies
-    .map(([name, range]) => `${name}@'${range}'`)
-    .join(' ')}`;
 
 const fileExsists = filePath => fs.existsSync(filePath);
 
@@ -89,60 +81,7 @@ const hasPrettierPackageConfig = packageJSON =>
   Object.prototype.hasOwnProperty.call(packageJSON, 'prettier');
 
 try {
-  const skyscannerWithPrettierConfig = readPackageJSON(
-    packageJSONPathForPackage('eslint-config-skyscanner-with-prettier'),
-  );
-  const command = createInstallCommand(
-    Object.entries(skyscannerWithPrettierConfig.peerDependencies),
-  );
-  console.log(
-    `Installing direct peerDependencies for \`eslint-config-skyscanner-with-prettier\`: ${colors.blue(
-      command,
-    )}`,
-  );
-  execSync(
-    createInstallCommand(
-      Object.entries(skyscannerWithPrettierConfig.peerDependencies),
-    ),
-    { cwd },
-  );
-
-  const skyscannerConfig = readPackageJSON(
-    packageJSONPathForPackage('eslint-config-skyscanner'),
-  );
-  const prettierPlugin = readPackageJSON(
-    packageJSONPathForPackage('eslint-plugin-prettier'),
-  );
   const projectPackageJSON = readPackageJSON(path.join(cwd, 'package.json'));
-
-  const skyscannerConfigPeerNames = Object.keys(
-    skyscannerConfig.peerDependencies,
-  );
-  const prettierPluginPeerNames = Object.keys(prettierPlugin.peerDependencies);
-  const hasIntersection = skyscannerConfigPeerNames.reduce(
-    (acc, value) => acc || prettierPluginPeerNames.indexOf(value) !== -1,
-    false,
-  );
-
-  if (hasIntersection) {
-    throw new Error(`Unexpected intersection among peer dependencies`);
-  }
-
-  const dependenciesToInstall = [].concat(
-    Object.entries(skyscannerConfig.peerDependencies),
-    Object.entries(prettierPlugin.peerDependencies),
-  );
-
-  const npmInstall = `npm install --save-dev ${dependenciesToInstall
-    .map(([name, range]) => `${name}@'${range}'`)
-    .join(' ')}`;
-  console.log(
-    `Installing further peer dependencies for \`eslint-config-skyscanner-with-prettier\`: ${colors.blue(
-      npmInstall,
-    )}`,
-  );
-  execSync(npmInstall, { cwd });
-  console.log(colors.green('All peer dependencies installed successfully'));
 
   const hasExistingEslintConfig =
     hasEslintRcFile(cwd) || hasEslintPackageConfig(projectPackageJSON);
