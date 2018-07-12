@@ -1,5 +1,7 @@
 # eslint-config-skyscanner-with-prettier
 
+[![Build Status](https://travis-ci.org/Skyscanner/eslint-config-skyscanner-with-prettier.svg?branch=master)](https://travis-ci.org/Skyscanner/eslint-config-skyscanner-with-prettier)
+
 This package contains an encapsulated setup for ESLint according to Skyscannner's best practices plus integrated support for Prettier via eslint fix.
 
 ## Installation
