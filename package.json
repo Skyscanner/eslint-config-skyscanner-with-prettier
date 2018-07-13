@@ -29,7 +29,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-prettier": "^2.6.1",
     "eslint-plugin-react": "^7.10.0",
-    "eslint_d": "^6.0.0",
     "prettier": "^1.13.7"
+  },
+  "devDependencies": {
+    "eslint_d": "^5.0.0"
   }
 }
