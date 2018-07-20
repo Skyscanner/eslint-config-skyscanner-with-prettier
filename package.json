@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-skyscanner-with-prettier",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Skyscanner's eslint config with prettier support ",
   "main": "index.js",
   "bin": "main.js",
