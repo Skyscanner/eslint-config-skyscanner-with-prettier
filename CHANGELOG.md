@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-_Nothing yet..._
+### Changed
+- Change default eslintrc filename to `.eslintrc.json` (instead of `.eslintrc`).
 
 ## 0.3.0 - 2018-08-28 Updated dependencies
 
