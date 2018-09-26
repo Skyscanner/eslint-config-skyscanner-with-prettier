@@ -2,13 +2,18 @@
   "name": "eslint-config-skyscanner-with-prettier",
   "version": "0.3.0",
   "description": "Skyscanner's eslint config with prettier support ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Skyscanner/eslint-config-skyscanner-with-prettier"
+  },
   "main": "index.js",
   "bin": "main.js",
   "engines": {
-    "node": ">= 8.7.0",
-    "npm": ">= 5.4.2"
+    "node": "^8.9.0",
+    "npm": "^6.4.1"
   },
   "scripts": {
+    "pretest": "npx ensure-node-env",
     "test": "(cd test && ./e2e-test.sh)",
     "postinstall": "./main.js",
     "lint": "npm run lint:js",
