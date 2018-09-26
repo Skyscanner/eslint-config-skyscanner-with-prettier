@@ -94,7 +94,7 @@ try {
     execSync(
       `cp ${path.join(__dirname, 'eslintrc.template')} ${path.join(
         cwd,
-        '.eslintrc',
+        '.eslintrc.json',
       )}`,
     );
     console.log('We created `.eslintrc.json` for you.');
