@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+_Nothing yet..._
+
+## 0.4.0 - 2018-10-04 Updated dependencies
+
 ### Changed
 - Updated eslint-config-skyscanner and associated peer deps.
 
