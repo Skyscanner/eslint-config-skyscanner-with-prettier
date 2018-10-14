@@ -5,6 +5,9 @@
 
 This package contains an encapsulated setup for ESLint according to Skyscannner's best practices plus integrated support for Prettier via eslint fix.
 
+## Changelog
+ The up-to-date changelog can be found [here](./CHANGELOG.md)
+
 ## Installation
 
 ```bash
