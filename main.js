@@ -20,6 +20,7 @@
 /* eslint-disable no-console */
 const path = require('path');
 const fs = require('fs');
+
 const colors = require('colors/safe');
 
 if (

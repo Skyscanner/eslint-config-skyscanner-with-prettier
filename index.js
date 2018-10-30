@@ -20,6 +20,13 @@ module.exports = {
   extends: ['skyscanner', 'prettier', 'prettier/react'],
   plugins: ['prettier'],
   rules: {
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+      },
+    ],
     'prettier/prettier': 'error',
   },
 };
