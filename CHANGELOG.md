@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
-_Nothing yet..._
+### Fixed
+- Upgraded dependencies: 
+  - colors
+  - eslint
+  - eslint-config-prettier
+  - eslint-config-skyscanner
+  - eslint-plugin-jsx-a11y
+  - eslint-plugin-prettier
+  - eslint-plugin-react
+  - prettier
 
 ## 0.4.0 - 2018-10-04 Updated dependencies
 
