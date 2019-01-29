@@ -91,9 +91,9 @@ try {
     );
   } else {
     fs.copyFileSync(
-		path.join(__dirname, 'eslintrc.template'), 
-		path.join(cwd, '.eslintrc.json')
-	);
+        path.join(__dirname, 'eslintrc.template'), 
+        path.join(cwd, '.eslintrc.json')
+    );
     console.log('We created `.eslintrc.json` for you.');
   }
 
@@ -102,9 +102,9 @@ try {
 
   if (!hasExistingPrettierConfig) {
     fs.copyFileSync(
-		path.join(__dirname, 'prettierrc.template'), 
-		path.join(cwd, '.prettierrc')
-	);
+        path.join(__dirname, 'prettierrc.template'), 
+        path.join(cwd, '.prettierrc')
+    );
     console.log('We created `.prettierrc` for you.');
   }
   console.log(
