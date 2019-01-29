@@ -15,7 +15,7 @@
   "scripts": {
     "pretest": "npx ensure-node-env",
     "test": "(cd test && ./e2e-test.sh)",
-    "postinstall": "./main.js",
+    "postinstall": "node ./main.js",
     "lint": "npm run lint:js",
     "lint:js": "eslint . --ext js",
     "lint:js:fix": "eslint . --ext js --fix"
