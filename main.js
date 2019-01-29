@@ -91,11 +91,12 @@ try {
       'Please add "extends": [\'skyscanner-with-prettier\'] to your eslint config and remove any extension of `skyscanner`',
     );
   } else {
-    execSync(
-      `cp ${path.join(__dirname, 'eslintrc.template')} ${path.join(
+    fs.copyFileSync(
+      `${path.join(__dirname, 'eslintrc.template')}`,
+	  `${path.join(
         cwd,
         '.eslintrc.json',
-      )}`,
+      )}`
     );
     console.log('We created `.eslintrc.json` for you.');
   }
@@ -104,11 +105,11 @@ try {
     hasPrettierRcFile(cwd) || hasPrettierPackageConfig(projectPackageJSON);
 
   if (!hasExistingPrettierConfig) {
-    execSync(
-      `cp ${path.join(__dirname, 'prettierrc.template')} ${path.join(
+    fs.copyFileSync(
+      `${path.join(__dirname, 'prettierrc.template')}`, `${path.join(
         cwd,
         '.prettierrc',
-      )}`,
+      )}`
     );
     console.log('We created `.prettierrc` for you.');
   }
