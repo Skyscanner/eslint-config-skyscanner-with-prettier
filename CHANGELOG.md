@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.7.0 - 2019-01-30
+
+- Bump `eslint-config-skyscanner` to `4.0.0`.
+
 ## 0.6.0 - 2019-01-29 Add cross platform support
 
 ### Changed
@@ -13,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 0.5.0 - 2019-01-14 Updated dependencies
 
 ### Changed
-- Updated dependencies: 
+- Updated dependencies:
   - colors
   - eslint
   - eslint-config-prettier
