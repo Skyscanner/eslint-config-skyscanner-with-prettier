@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## UNRELEASED
+
+- Depend on the beta version of `eslint-config-skyscanner`.
+
 ## 0.7.0 - 2019-01-30
 
 - Bump `eslint-config-skyscanner` to `4.0.0`.
