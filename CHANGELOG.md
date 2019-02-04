@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## UNRELEASED
 
+_Nothing yet..._
+
+## 0.8.0 - 2019-02-04
+
 - Depend on the beta version of `eslint-config-skyscanner`.
 
 ## 0.7.0 - 2019-01-30
