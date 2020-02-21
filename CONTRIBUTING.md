@@ -43,11 +43,11 @@ limitations under the License.
 eslint-config-skyscanner-with-prettier is developed using Node, using the following versions:
 
 * `LTS` (Node)
-* `^5.6.0` (npm)
+* `^6.4.1` (npm)
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, eslint-config-skyscanner-with-prettier has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
-To install npm, use `npm install --global npm@^5.6.0`.
+To install npm, use `npm install --global npm@^6.4.1`.
 
 
 
