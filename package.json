@@ -15,7 +15,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "eslint-config-skyscanner": "^5.0.0"
+    "eslint-config-skyscanner": "^5.2.0"
   },
   "devDependencies": {}
 }
