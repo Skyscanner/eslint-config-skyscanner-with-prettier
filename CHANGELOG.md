@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## UNRELEASED
 
+### Breaking
+- Bump `eslint-config-skyscanner` to `6.0.0`. **`eslint-config-skyscanner-with-prettier` is deprecated**: Prettier is now included in `eslint-config-skyscanner`, and this package is just a wrapper around it. It's recommended to switch to `eslint-config-skyscanner` as soon as possible, as `eslint-config-skyscanner-with-prettier` is deprecated and will be archived soon.
+
 ## 1.0.0 - Moving to wrapping `eslint-config-skyscanner`
 
 ### Changed

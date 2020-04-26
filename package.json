@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-skyscanner-with-prettier",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Skyscanner's eslint config with prettier support ",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "dependencies": {
-    "eslint-config-skyscanner": "^5.0.0"
+    "eslint-config-skyscanner": "^6.0.0"
   },
   "devDependencies": {}
 }
