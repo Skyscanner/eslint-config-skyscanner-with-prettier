@@ -1,3 +1,5 @@
+# eslint-config-skyscanner-with-prettier is deprecated and is recommended to use [eslint-config-skyscanner](https://github.com/Skyscanner/eslint-config-skyscanner)
+
 # eslint-config-skyscanner-with-prettier
 
 [![Build Status](https://travis-ci.org/Skyscanner/eslint-config-skyscanner-with-prettier.svg?branch=master)](https://travis-ci.org/Skyscanner/eslint-config-skyscanner-with-prettier)
